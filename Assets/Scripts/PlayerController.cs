@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour {
 	}
 
 	void HandleMovement() {
-		Vector3 dir = new Vector3(Input.GetAxis("Vertical"), 0f, Input.GetAxis("Horizontal"));
-
+		Vector3 dir = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+		dir.Normalize();
 		controller.Move(dir * speed * Time.deltaTime);
 	}
 }
